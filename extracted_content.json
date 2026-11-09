@@ -1,0 +1,138 @@
+{
+  "title": "Enterprise Data Operations & AI-Driven Analytics Solutions",
+  "services": [
+    {
+      "name": "Data Entry",
+      "tag": "High-Precision Keying & Digitization",
+      "desc": "High-throughput transcription, document digitization, and double-blind keying validation. Transforming paper documents, mortgage files, handwritten records, and queues into structured database schemas with 99.94% verified accuracy.",
+      "points": [
+        "Double-Blind Independent Parallel Keying",
+        "High-Speed Production Scanners & OCR Auditing",
+        "Real-Time Character Difference Validation",
+        "Daily Queue Execution & SLA Delivery"
+      ]
+    },
+    {
+      "name": "Web Scraping",
+      "tag": "Automated Web Harvesting",
+      "desc": "Automated high-volume web data harvesting, competitor SKU tracking, and market intelligence pipelines. Custom multi-threaded scrapers with IP rotation, anti-bot bypassing, and schema validation delivering clean daily datasets.",
+      "points": [
+        "Multi-Threaded Proxy & IP Rotation",
+        "Daily SKU & Pricing Intelligence Pipelines",
+        "Structured Output in JSON, CSV, SQL & Snowflake",
+        "Automated Anti-Bot & Schema Health Monitors"
+      ]
+    },
+    {
+      "name": "Data Processing",
+      "tag": "Cleansing & CRM Hygiene",
+      "desc": "Comprehensive database cleansing, CRM deduplication, and multi-format document conversion. Standardizing addresses with CASS certification, merging duplicates, and sanitizing databases with zero data loss.",
+      "points": [
+        "Salesforce & HubSpot CRM Hygiene",
+        "Multi-Format Parsing (PDF, TIFF, EDI, XML)",
+        "CASS Certified Address Standardization",
+        "Automated Duplicate Identification & Merge"
+      ]
+    },
+    {
+      "name": "Data Analytics",
+      "tag": "Executive Power BI & Intelligence",
+      "desc": "Turning raw operational logs and transaction queues into interactive executive dashboards. Custom Power BI and Tableau visualization suites for real-time SLA monitoring, forecasting, and data-driven decision making.",
+      "points": [
+        "Executive Power BI & Tableau Dashboards",
+        "Real-Time Pipeline SLA & Performance Trackers",
+        "Automated Daily/Weekly KPI Dispatches",
+        "Financial & Operational Trend Modeling"
+      ]
+    },
+    {
+      "name": "Administrative Assistant",
+      "tag": "Dedicated Virtual Back-Office",
+      "desc": "Dedicated, enterprise-trained executive virtual assistants handling high-volume operational tasks. Managing executive calendars, email queues, CRM data updates, customer order processing, and vendor invoicing reconciliations.",
+      "points": [
+        "Executive Calendar & Email Queue Management",
+        "CRM Pipeline Updates & Lead Verification",
+        "Invoicing, Billing & Vendor Reconciliations",
+        "Customer Order & Back-Office Ticket Processing"
+      ]
+    },
+    {
+      "name": "Data Services",
+      "tag": "Managed Cloud Operations",
+      "desc": "Turnkey data operations, cloud data lake ingestion, and machine learning training data annotation. Seamless cloud migrations to Snowflake, BigQuery, and AWS S3 with 24/7 dedicated engineering squads.",
+      "points": [
+        "Cloud Data Lake Ingestion (AWS, GCP, Azure)",
+        "Snowflake & BigQuery Migration Pipelines",
+        "High-Accuracy AI/ML Data Labeling & Annotation",
+        "Turnkey Managed SLAs & 24/7 Production Squads"
+      ]
+    }
+  ],
+  "qa_protocol": [
+    {
+      "step": "01",
+      "title": "Batch Ingestion & Field Scoping",
+      "desc": "Secure batch ingestion via encrypted VPN enclaves. Establishing boundary definitions, custom validation dictionaries, and strict SLA parameters."
+    },
+    {
+      "step": "02",
+      "title": "Independent Parallel Keying",
+      "desc": "Two independent certified operators key identical records in parallel with zero visibility into each other's workspaces (Dual-Blind Protocol)."
+    },
+    {
+      "step": "03",
+      "title": "Real-Time Character Diff Audit",
+      "desc": "Automated audit software performs byte-level and character-level comparisons, highlighting any discrepancy between the two keyed entries instantly."
+    },
+    {
+      "step": "04",
+      "title": "Senior QA Validation & Database Export",
+      "desc": "Senior QA analysts arbitrate flagged variances against original source files before final validation and database injection."
+    }
+  ],
+  "case_studies": [
+    {
+      "metric": "99.94%",
+      "label": "Verified Keying SLA",
+      "title": "5 Million Paper Mortgage Records Digitized",
+      "client": "Top-10 US Mortgage Lender",
+      "desc": "Digitized, extracted, and structured 48 critical loan fields from legacy paper and microfiche archives with a 99.94% accuracy guarantee.",
+      "stack": [
+        "Dual-Blind Keying",
+        "OCR Normalization",
+        "SQL Server"
+      ]
+    },
+    {
+      "metric": "1.2M",
+      "label": "CRM Records Standardized",
+      "title": "Salesforce CRM Deduplication & CASS Validation",
+      "client": "Enterprise B2B Software Group",
+      "desc": "Sanitized 1.2M customer contacts, eliminated 28% duplicate records, and validated postal addresses with zero loss of critical customer history.",
+      "stack": [
+        "Salesforce API",
+        "CASS Engine",
+        "HubSpot Sync"
+      ]
+    },
+    {
+      "metric": "800K+",
+      "label": "Daily SKUs Harvested",
+      "title": "Automated Competitor Pricing Scraper Pipeline",
+      "client": "Omnichannel Retail Leader",
+      "desc": "Engineered daily automated scraping pipelines monitoring inventory, prices, and promotions across 14 competing marketplace portals.",
+      "stack": [
+        "Python Scrapy",
+        "Residential Proxies",
+        "BigQuery"
+      ]
+    }
+  ],
+  "trust_points": {
+    "incorporation": "Delaware USA Incorporated (Coastal Highway, Lewes, DE 19958)",
+    "accuracy": "99.94% Accuracy SLA Guarantee",
+    "records_processed": "50M+ Records Processed",
+    "operations": "24/7 Enterprise Production Squads",
+    "compliance": "Strict Mutual NDA, Encrypted VPN Enclaves, HIPAA & ISO-Grade Protocols"
+  }
+}

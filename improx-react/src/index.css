@@ -1,0 +1,691 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
+@import "tailwindcss";
+
+:root {
+  --bg-main: #f4f6f7;
+  --bg-neutral: #edf2f7;
+  --brand-blue: #0052FF;
+  --brand-blue-hover: #0043DB;
+  --brand-blue-light: #60a5fa;
+  --brand-navy-deep: #08101E;
+  --brand-navy: #0d1e38;
+  --brand-ice: #EBF3FE;
+  --brand-border: #d9e2e4;
+  --brand-text: #0f172a;
+  --brand-text-muted: #64748b;
+}
+
+@layer base {
+  html, body {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--nl-text);
+  }
+
+  /* Engineering Tech Dot Matrix Background */
+  body {
+    background-image: radial-gradient(rgba(0, 82, 255, 0.05) 1.2px, transparent 1.2px);
+    background-size: 28px 28px;
+  }
+
+  *, button, input, select, textarea, h1, h2, h3, h4, h5, h6, p, span, a {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif !important;
+  }
+
+  /* Precision Architecture: Remove all rounded corners */
+  *, ::before, ::after,
+  .rounded-none,
+  .rounded-sm,
+  .rounded,
+  .rounded-md,
+  .rounded-lg,
+  .rounded-xl,
+  .rounded-2xl,
+  .rounded-3xl,
+  .rounded-full {
+    border-radius: 0 !important;
+  }
+
+  /* Utility: Hide Scrollbar while keeping smooth horizontal swipe */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* ======================================================== */
+/* NOETIC LABS ANIMATION SUITE                              */
+/* ======================================================== */
+
+/* ======================================================== */
+/* NOETIC LABS ANIMATION SUITE - ULTRA-SMOOTH GPU 60FPS     */
+/* ======================================================== */
+
+/* 1. Hero Load-Up Staggered Animation (Fluid Apple-grade ease) */
+@keyframes heroFadeUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.hero-load-up {
+  opacity: 0;
+  animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+.delay-1 { animation-delay: 0.08s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.32s; }
+.delay-4 { animation-delay: 0.44s; }
+.delay-5 { animation-delay: 0.56s; }
+
+/* 2. Infinite Continuous Scroll Marquee - Hardware Accelerated */
+@keyframes infiniteScroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-infinite-scroll {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  animation: infiniteScroll 45s linear infinite;
+}
+
+.animate-infinite-scroll:hover {
+  animation-play-state: paused;
+}
+
+/* 3. Floating Ambient Glow / Wave */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate3d(0, -14px, 0) scale(1.06);
+    opacity: 0.65;
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 10s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+@keyframes wavePulse {
+  0%, 100% {
+    opacity: 0.25;
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+  50% {
+    opacity: 0.42;
+    transform: translate3d(0, 0, 0) rotate(1.5deg) scale(1.03);
+  }
+}
+
+.animate-wave-pulse {
+  animation: wavePulse 14s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+/* 4. Noetic Labs Fluid Scroll Entrance Animations */
+.scroll-fade-up {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+.scroll-fade-up.visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.scroll-fade-in {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity;
+}
+
+.scroll-fade-in.visible {
+  opacity: 1;
+}
+
+.scroll-slide-left {
+  opacity: 0;
+  transform: translate3d(-28px, 0, 0);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+.scroll-slide-left.visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.scroll-slide-right {
+  opacity: 0;
+  transform: translate3d(28px, 0, 0);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+.scroll-slide-right.visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.scroll-zoom-in {
+  opacity: 0;
+  transform: scale(0.96) translate3d(0, 16px, 0);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+.scroll-zoom-in.visible {
+  opacity: 1;
+  transform: scale(1) translate3d(0, 0, 0);
+}
+
+/* Elegant upright entrance for cards (Zero pixel-tilt distortion) */
+.scroll-rotate-in {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0) scale(0.97);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+.scroll-rotate-in.visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+/* 5. Noetic Labs Interactive Card Hover Effects */
+.noetic-card {
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease;
+  will-change: transform, box-shadow;
+  backface-visibility: hidden;
+}
+
+.noetic-card:hover {
+  transform: translate3d(0, -7px, 0);
+  box-shadow: 0 20px 35px -8px rgba(0, 82, 255, 0.14), 0 10px 18px -6px rgba(0, 0, 0, 0.06);
+}
+
+.noetic-card .card-img-zoom {
+  transform: scale(1);
+  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.noetic-card:hover .card-img-zoom {
+  transform: scale(1.1);
+}
+
+.noetic-card .card-icon-bounce {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, color 0.3s ease;
+}
+
+.noetic-card:hover .card-icon-bounce {
+  transform: scale(1.1) translate3d(0, -2px, 0);
+}
+
+/* ===================================================================
+   6. NOETIC LABS EXACT DITTO SIGNATURE CARD STYLES
+   =================================================================== */
+
+/* --- 6.1 DITTO SERVICE CARD: Open, Spacious Architecture with Smooth Unfold --- */
+.noetic-service-card,
+.service-card {
+  border-radius: 0;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  height: 400px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow;
+  backface-visibility: hidden;
+}
+
+@media (min-width: 1024px) {
+  .noetic-service-card,
+  .service-card {
+    height: 420px;
+  }
+}
+
+@media (max-width: 768px) {
+  .noetic-service-card,
+  .service-card {
+    height: 360px;
+  }
+}
+
+.noetic-service-card:hover,
+.service-card:hover {
+  transform: translate3d(0, -6px, 0);
+  box-shadow: 0 16px 36px -6px rgba(0, 82, 255, 0.28);
+}
+
+.noetic-service-card .card-img,
+.service-card .card-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.noetic-service-card:hover .card-img,
+.service-card:hover .card-img {
+  transform: scale(1.08);
+}
+
+.noetic-service-card .overlay,
+.service-card .overlay {
+  position: absolute;
+  inset: 0;
+  padding: 28px 24px;
+  color: #fff;
+  background: linear-gradient(
+    to top,
+    rgba(8, 16, 30, 0.94) 0%,
+    rgba(8, 16, 30, 0.70) 38%,
+    rgba(8, 16, 30, 0.15) 70%,
+    transparent 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: center;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.noetic-service-card:hover .overlay,
+.service-card:hover .overlay {
+  background: linear-gradient(
+    to top,
+    rgba(8, 16, 30, 0.98) 0%,
+    rgba(8, 16, 30, 0.92) 65%,
+    rgba(8, 16, 30, 0.50) 85%,
+    rgba(8, 16, 30, 0.20) 100%
+  );
+  text-align: left;
+}
+
+.noetic-service-card .overlay h3,
+.service-card .overlay h3 {
+  font-size: 19px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.35;
+  text-align: center;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.35s ease,
+              text-align 0.35s ease;
+}
+
+.noetic-service-card:hover .overlay h3,
+.service-card:hover .overlay h3 {
+  text-align: left;
+  transform: translate3d(0, -2px, 0);
+  color: #60a5fa;
+}
+
+.noetic-service-card .unfold-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  text-align: left;
+  transform: translate3d(0, 6px, 0);
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              margin-top 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-top: 0;
+  will-change: opacity, transform, max-height;
+}
+
+.noetic-service-card:hover .unfold-content {
+  opacity: 1;
+  max-height: 340px;
+  transform: translate3d(0, 0, 0);
+  margin-top: 14px;
+}
+
+/* --- 6.2 DITTO INDUSTRY BOX: Open, Clean Tile --- */
+.noetic-industry-box,
+.industry-box {
+  background: #0d1e38;
+  min-height: 145px;
+  padding: 24px 20px;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.35s ease,
+              box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  will-change: transform, box-shadow;
+  backface-visibility: hidden;
+}
+
+.noetic-industry-box:hover,
+.industry-box:hover {
+  background: #070e1c;
+  transform: translate3d(0, -4px, 0);
+  border-color: rgba(0, 82, 255, 0.5);
+  box-shadow: 0 12px 24px rgba(0, 82, 255, 0.18);
+}
+
+.noetic-industry-box .ind-icon,
+.industry-box .ind-icon {
+  width: 34px;
+  height: 34px;
+  margin-bottom: 10px;
+  flex-shrink: 0;
+  color: #0066FF;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+}
+
+.noetic-industry-box:hover .ind-icon,
+.industry-box:hover .ind-icon {
+  transform: scale(1.12) translate3d(0, -2px, 0);
+  color: #ffffff;
+}
+
+.noetic-industry-box span,
+.industry-box span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* --- 6.3 DITTO BLOG / CASE STUDY CARD --- */
+.noetic-blog-card,
+.blog-card {
+  border-radius: 0;
+  background: #ffffff;
+  border: 1px solid #d9e2e4;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  will-change: transform, box-shadow;
+  backface-visibility: hidden;
+}
+
+.noetic-blog-card:hover,
+.blog-card:hover {
+  transform: translate3d(0, -6px, 0);
+  box-shadow: 0 14px 28px -6px rgba(0, 82, 255, 0.16);
+  border-color: #0052FF;
+}
+
+.noetic-blog-card .blog-img-wrapper,
+.blog-card .blog-img-wrapper {
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+  background: #f1f5f9;
+}
+
+@media (max-width: 768px) {
+  .noetic-blog-card .blog-img-wrapper,
+  .blog-card .blog-img-wrapper {
+    height: 180px;
+  }
+}
+
+.noetic-blog-card .blog-img-wrapper img,
+.blog-card .blog-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.noetic-blog-card:hover .blog-img-wrapper img,
+.blog-card:hover .blog-img-wrapper img {
+  transform: scale(1.08);
+}
+
+.noetic-blog-card .blog-content {
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.noetic-blog-card .blog-content {
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.noetic-blog-card .meta {
+  font-size: 11px;
+  font-weight: 700;
+  color: #0052FF;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.noetic-blog-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.35;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.noetic-blog-card:hover h3 {
+  color: #0052FF;
+}
+
+.noetic-blog-card p {
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.55;
+  margin-bottom: 18px;
+}
+
+.noetic-blog-card .read-more {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0052FF;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.noetic-blog-card:hover .read-more {
+  transform: translateX(4px);
+  color: #0043DB;
+}
+
+/* --- 6.4 DITTO PROBLEM VS SOLUTION SECTION (NOETIC LABS SPEC) --- */
+.noetic-problem-card {
+  position: relative;
+  width: 100%;
+  min-height: 480px;
+  border-radius: 0;
+  overflow: hidden;
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.noetic-problem-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  transform: scale(1);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.noetic-problem-card:hover img {
+  transform: scale(1.08);
+}
+
+.noetic-problem-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(7, 14, 28, 0.95) 0%,
+    rgba(13, 30, 56, 0.6) 45%,
+    rgba(0, 0, 0, 0.15) 100%
+  );
+  z-index: 1;
+}
+
+.noetic-problem-content {
+  position: absolute;
+  bottom: 34px;
+  left: 32px;
+  right: 32px;
+  z-index: 2;
+  text-align: left;
+}
+
+.noetic-problem-content h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.noetic-problem-content p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #EBF3FE;
+  margin: 0;
+}
+
+.noetic-solution-card {
+  width: 100%;
+  min-height: 480px;
+  background: #EBF3FE;
+  border: 1px solid #d0e2fb;
+  border-radius: 0;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.noetic-solution-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 28px;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .noetic-solution-features {
+    grid-template-columns: 1fr;
+  }
+}
+
+.noetic-feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.noetic-feature .feature-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 0;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0052FF;
+  box-shadow: 0 4px 12px rgba(0, 82, 255, 0.08);
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.noetic-solution-card:hover .noetic-feature:hover .feature-icon-box {
+  transform: scale(1.1) translateY(-2px);
+  background: #0052FF;
+  color: #ffffff;
+}
+
+.noetic-feature span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0d1e38;
+  line-height: 1.4;
+}
